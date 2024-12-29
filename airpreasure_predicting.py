@@ -63,18 +63,23 @@ print("\n5 rreshtat e fundit të tabelës origjinale:")
 print(df.tail())
 
 # Vizualizimi i të dhënave origjinale dhe të parashikuara
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(12, 6))
 
-# Të dhënat origjinale
-plt.plot(df['Timestamp'], df['Air_Pressure'], label='Të dhënat origjinale', color='blue', alpha=0.6)
+# Të dhënat origjinale me pika më të mëdha dhe ngjyrë blu të errët
+plt.scatter(df['Timestamp'], df['Air_Pressure'], label='Të dhënat origjinale (2014-2023)', color='darkblue', s=30, alpha=0.7)
 
-# Të dhënat e parashikuara për 2024
-plt.plot(predicted_df['Timestamp'], predicted_df['Predicted_Air_Pressure'], label='Parashikimi 2024', color='red', alpha=0.6)
+# Të dhënat e parashikuara për 2024 me linjë të kuqe dhe pikë
+plt.plot(predicted_df['Timestamp'], predicted_df['Predicted_Air_Pressure'], label='Parashikimi 2024', color='red', linewidth=2)
 
-plt.title('Krahasimi i presionit të ajrit - Të dhënat origjinale vs. Parashikimi 2024')
-plt.xlabel('Timestamp')
-plt.ylabel('Air Pressure (hPa)')
+# Pikat për 2024 (si pika të gjelbër) për të theksuar rezultatet
+plt.scatter(predicted_df['Timestamp'], predicted_df['Predicted_Air_Pressure'], label='Pikat e parashikuara 2024', color='green', s=20, zorder=5)
+
+# Etiketat dhe titulli
+plt.title('Krahasimi i presionit të ajrit - Të dhënat origjinale vs. Parashikimi 2024', fontsize=14)
+plt.xlabel('Timestamp (Data)', fontsize=12)
+plt.ylabel('Presioni i Ajrit (hPa)', fontsize=12)
 plt.legend()
 
 # Shfaqni grafikun
+plt.grid(True)
 plt.show()
