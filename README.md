@@ -69,5 +69,5 @@ Ky projekt është i licencuar nën **MIT License** - shihni [LICENSE.md](LICENS
 
 ## Autorët
 
-Ky projekt është krijuar nga [Emri Juaj]. Të dhënat janë mbledhur nga **Republika e Kosovës** për periudhën 2017-2023 dhe janë përdorur për të parashikuar parametrat klimatike për vitin 2024.
+Ky projekt është krijuar nga Bledi Buduri. Të dhënat janë mbledhur nga Republika e Kosovës për periudhën 2017-2023 dhe janë përdorur për të parashikuar parametrat klimatike për vitin 2024.
 
