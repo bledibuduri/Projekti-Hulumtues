@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
 
 # Ngarkoni të dhënat nga CSV
 df = pd.read_csv('airpreasure.csv')
@@ -53,3 +54,27 @@ predicted_df = pd.DataFrame({
 predicted_df.to_csv('predicted_air_pressure_2024.csv', index=False)
 
 print("Parashikimi për vitin 2024 u ruajt me sukses në 'predicted_air_pressure_2024.csv'")
+
+# Shfaqni 5 rreshtat e parë dhe të fundit të tabelës
+print("5 rreshtat e para të tabelës origjinale:")
+print(df.head())
+
+print("\n5 rreshtat e fundit të tabelës origjinale:")
+print(df.tail())
+
+# Vizualizimi i të dhënave origjinale dhe të parashikuara
+plt.figure(figsize=(10, 6))
+
+# Të dhënat origjinale
+plt.plot(df['Timestamp'], df['Air_Pressure'], label='Të dhënat origjinale', color='blue', alpha=0.6)
+
+# Të dhënat e parashikuara për 2024
+plt.plot(predicted_df['Timestamp'], predicted_df['Predicted_Air_Pressure'], label='Parashikimi 2024', color='red', alpha=0.6)
+
+plt.title('Krahasimi i presionit të ajrit - Të dhënat origjinale vs. Parashikimi 2024')
+plt.xlabel('Timestamp')
+plt.ylabel('Air Pressure (hPa)')
+plt.legend()
+
+# Shfaqni grafikun
+plt.show()
