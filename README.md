@@ -51,7 +51,13 @@ Additionally, graphical representations of the original data versus predicted va
 - `predicted_humidity_2024.csv`: Predicted humidity values for 2024.
 - `predicted_temperature_2024.csv`: Predicted temperature values for 2024.
 - `predicted_windspeed_2024.csv`: Predicted wind speed values for 2024.
-- `weather_prediction.py`: Python script for running the entire prediction pipeline (Data Preprocessing, Model Training, and Prediction).
+- 
+### Scripts Overview:
+
+- `temperature_prediction.py`: For predicting temperature in 2024.
+- `humidity_prediction.py`: For predicting humidity in 2024.
+- `windspeed_prediction.py`: For predicting wind speed in 2024.
+- `airpressure_prediction.py`: For predicting air pressure in 2024.
 
 ## Requirements
 - Python 3.11+
