@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 
 # Ngarkoni të dhënat nga CSV për WindSpeed
@@ -33,6 +33,7 @@ y_pred = model.predict(X_test)
 # Vlerësimi i modelit
 mse = mean_squared_error(y_test, y_pred)
 print(f"Mean Squared Error: {mse}")
+print('R²:', r2_score(y_test, y_pred))
 
 # Parashikimi për vitin 2024
 # Krijoni një seri datash për vitin 2024 (për çdo orë)
