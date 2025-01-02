@@ -79,3 +79,13 @@ output_path = 'Air_Pressure_predictions_Prophet_2024.csv'
 future_predictions.to_csv(output_path, index=False)
 
 print(f"Predictions for 2024 have been saved to '{output_path}'")
+
+# Plot histogram of residuals (difference between actual and predicted values)
+residuals = test['y'] - forecast['yhat']
+plt.figure(figsize=(10, 6))
+plt.hist(residuals, bins=30, color='skyblue', edgecolor='black')
+plt.title('Histogram of Residuals')
+plt.xlabel('Residuals')
+plt.ylabel('Frequency')
+plt.grid(True)
+plt.show()
